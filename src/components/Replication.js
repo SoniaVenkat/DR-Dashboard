@@ -1,6 +1,8 @@
 import React from "react";
 import MainHeader from "./MainHeader";
 import Sidebar from "./Sidebar";
+import { Link } from "react-router-dom";
+
 const Replication = () => {
   return (
     <div className="header">
@@ -25,12 +27,12 @@ const Replication = () => {
                 </div>
               </div>
               <div className="d-flex justify-content-between align-items-center mt-0 p-4">
-                <a className="btn btn-danger text-white" href="#">
+                <Link className="btn btn-danger text-white" to="#">
                   End claim
-                </a>
-                <a className="btn btn-danger text-white" href="#">
+                </Link>
+                <Link className="btn btn-danger text-white" to="#">
                   EndXYFilling
-                </a>
+                </Link>
               </div>
             </div>
           </div>

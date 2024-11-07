@@ -1,6 +1,8 @@
 import React from "react";
 import MainHeader from "./MainHeader";
 import Sidebar from "./Sidebar";
+import { Link } from "react-router-dom";
+
 const Capacity = () => {
   return (
     <div className="header">
@@ -26,9 +28,9 @@ const Capacity = () => {
 
         <div className="d-flex justify-content-between align-items-center mb-4 mt-4">
           <h4>Recommendation</h4>
-          <a className="btn btn-primary" href="#">
+          <Link className="btn btn-primary" to="#">
             Submit Support Request
-          </a>
+          </Link>
         </div>
 
         <div className="card">

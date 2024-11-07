@@ -1,5 +1,6 @@
 import React from "react";
 import "../css/ready.css";
+import { Link } from "react-router-dom";
 
 const MainHeader = () => {
   return (
@@ -44,9 +45,9 @@ const MainHeader = () => {
           </form>
           <ul className="navbar-nav topbar-nav ml-md-auto align-items-center">
             <li className="nav-item dropdown hidden-caret">
-              <a
+              <Link
                 className="nav-link dropdown-toggle"
-                href="#"
+                to="#"
                 id="navbarDropdown"
                 role="button"
                 data-toggle="dropdown"
@@ -54,24 +55,24 @@ const MainHeader = () => {
                 aria-expanded="false"
               >
                 <i className="la la-envelope"></i>
-              </a>
+              </Link>
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a className="dropdown-item" href="#">
+                <Link className="dropdown-item" to="#">
                   Action
-                </a>
-                <a className="dropdown-item" href="#">
+                </Link>
+                <Link className="dropdown-item" to="#">
                   Another action
-                </a>
+                </Link>
                 <div className="dropdown-divider"></div>
-                <a className="dropdown-item" href="#">
+                <Link className="dropdown-item" to="#">
                   Something else here
-                </a>
+                </Link>
               </div>
             </li>
             <li className="nav-item dropdown hidden-caret">
-              <a
+              <Link
                 className="nav-link dropdown-toggle"
-                href="#"
+                to="#"
                 id="navbarDropdown"
                 role="button"
                 data-toggle="dropdown"
@@ -80,7 +81,7 @@ const MainHeader = () => {
               >
                 <i className="la la-bell"></i>
                 <span className="notification">3</span>
-              </a>
+              </Link>
               <ul
                 className="dropdown-menu notif-box"
                 aria-labelledby="navbarDropdown"
@@ -92,7 +93,7 @@ const MainHeader = () => {
                 </li>
                 <li>
                   <div className="notif-center">
-                    <a href="#">
+                    <Link to="#">
                       <div className="notif-icon notif-primary">
                         <i className="la la-user-plus"></i>
                       </div>
@@ -100,8 +101,8 @@ const MainHeader = () => {
                         <span className="block">New user registered</span>
                         <span className="time">5 minutes ago</span>
                       </div>
-                    </a>
-                    <a href="#">
+                    </Link>
+                    <Link to="#">
                       <div className="notif-icon notif-success">
                         <i className="la la-comment"></i>
                       </div>
@@ -109,8 +110,8 @@ const MainHeader = () => {
                         <span className="block">Rahmad commented on Admin</span>
                         <span className="time">12 minutes ago</span>
                       </div>
-                    </a>
-                    <a href="#">
+                    </Link>
+                    <Link to="#">
                       <div className="notif-img">
                         <img src="assets/img/profile2.jpg" alt="Img Profile" />
                       </div>
@@ -118,8 +119,8 @@ const MainHeader = () => {
                         <span className="block">Reza sent messages to you</span>
                         <span className="time">12 minutes ago</span>
                       </div>
-                    </a>
-                    <a href="#">
+                    </Link>
+                    <Link to="#">
                       <div className="notif-icon notif-danger">
                         <i className="la la-heart"></i>
                       </div>
@@ -127,22 +128,22 @@ const MainHeader = () => {
                         <span className="block">Farrah liked Admin</span>
                         <span className="time">17 minutes ago</span>
                       </div>
-                    </a>
+                    </Link>
                   </div>
                 </li>
                 <li>
-                  <a className="see-all" href="javascript:void(0);">
+                  <Link className="see-all" to="#">
                     <strong>See all notifications</strong>{" "}
                     <i className="la la-angle-right"></i>
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </li>
             <li className="nav-item dropdown">
-              <a
+              <Link
                 className="dropdown-toggle profile-pic"
                 data-toggle="dropdown"
-                href="#"
+                to="#"
                 aria-expanded="false"
               >
                 <img
@@ -152,7 +153,7 @@ const MainHeader = () => {
                   className="img-circle"
                 />
                 <span>Hizrian</span>
-              </a>
+              </Link>
               <ul className="dropdown-menu dropdown-user">
                 <li>
                   <div className="user-box">
@@ -172,23 +173,23 @@ const MainHeader = () => {
                   </div>
                 </li>
                 <div className="dropdown-divider"></div>
-                <a className="dropdown-item" href="#">
+                <Link className="dropdown-item" to="#">
                   <i className="ti-user"></i> My Profile
-                </a>
-                <a className="dropdown-item" href="#">
+                </Link>
+                <Link className="dropdown-item" to="#">
                   My Balance
-                </a>
-                <a className="dropdown-item" href="#">
+                </Link>
+                <Link className="dropdown-item" to="#">
                   <i className="ti-email"></i> Inbox
-                </a>
+                </Link>
                 <div className="dropdown-divider"></div>
-                <a className="dropdown-item" href="#">
+                <Link className="dropdown-item" to="#">
                   <i className="ti-settings"></i> Account Setting
-                </a>
+                </Link>
                 <div className="dropdown-divider"></div>
-                <a className="dropdown-item" href="#">
+                <Link className="dropdown-item" to="#">
                   <i className="fa fa-power-off"></i> Logout
-                </a>
+                </Link>
               </ul>
             </li>
           </ul>
