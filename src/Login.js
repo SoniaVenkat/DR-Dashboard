@@ -69,13 +69,20 @@ const Login = () => {
                       className="text-center"
                       onClick={() => handleSelectCloud(cloud.name)}
                       style={{
-                        border: selectedCloud?.name === cloud.name ? "2px solid blue" : "1px solid gray",
+                        border:
+                          selectedCloud?.name === cloud.name
+                            ? "2px solid blue"
+                            : "1px solid gray",
                         padding: "10px",
                         borderRadius: "10px",
                         cursor: "pointer",
                       }}
                     >
-                      <img src={cloud.imgSrc} alt={cloud.name} style={{ width: "100px", height: "100px" }} />
+                      <img
+                        src={cloud.imgSrc}
+                        alt={cloud.name}
+                        style={{ width: "100px", height: "100px" }}
+                      />
                       <p>{cloud.name}</p>
                     </div>
                   ))}
@@ -93,19 +100,34 @@ const Login = () => {
 
       {/* Modal */}
       {showModal && (
-        <div className="modal fade show d-block" tabIndex="-1" aria-labelledby="modalLabel" aria-modal="true" role="dialog">
+        <div
+          className="modal fade show d-block"
+          tabIndex="-1"
+          aria-labelledby="modalLabel"
+          aria-modal="true"
+          role="dialog"
+        >
           <div className="modal-dialog modal-dialog-centered">
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title" id="modalLabel">
                   {selectedCloud?.name} Login
                 </h5>
-                <button type="button" className="btn-close" onClick={() => setShowModal(false)} aria-label="Close"></button>
+                <button
+                  type="button"
+                  className="btn-close"
+                  onClick={() => setShowModal(false)}
+                  aria-label="Close"
+                ></button>
               </div>
               <div className="modal-body">
                 {selectedCloud && (
                   <div className="text-center mb-4">
-                    <img src={selectedCloud.imgSrc} alt={selectedCloud.name} style={{ width: "80px", height: "80px" }} />
+                    <img
+                      src={selectedCloud.imgSrc}
+                      alt={selectedCloud.name}
+                      style={{ width: "80px", height: "80px" }}
+                    />
                   </div>
                 )}
                 <form onSubmit={handleSubmit}>
