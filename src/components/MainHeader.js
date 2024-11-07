@@ -1,8 +1,22 @@
 import React from "react";
 import "../css/ready.css";
-import { Link } from "react-router-dom";
+import { useMsal } from "@azure/msal-react";
+import { useNavigate } from "react-router-dom";
 
 const MainHeader = () => {
+  const { instance } = useMsal();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    instance
+      .logoutPopup()
+      .then(() => {
+        navigate("/"); // Redirect to login page after logout
+      })
+      .catch((error) => {
+        console.error("Logout failed: ", error);
+      });
+  };
   return (
     <div className="main-header">
       <div className="logo-header">
@@ -21,7 +35,7 @@ const MainHeader = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <button className="topbar-toggler more">
-          <i className="la la-ellipsis-v"></i>
+          <i className="fa fa-ellipsis-v"></i>
         </button>
       </div>
       <nav className="navbar navbar-header navbar-expand-lg">
@@ -38,50 +52,50 @@ const MainHeader = () => {
               />
               <div className="input-group-append">
                 <span className="input-group-text">
-                  <i className="la la-search search-icon"></i>
+                  <i className="fa fa-search search-icon"></i>
                 </span>
               </div>
             </div>
           </form>
           <ul className="navbar-nav topbar-nav ml-md-auto align-items-center">
             <li className="nav-item dropdown hidden-caret">
-              <Link
+              <a
                 className="nav-link dropdown-toggle"
-                to="#"
+                href="#"
                 id="navbarDropdown"
                 role="button"
                 data-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                <i className="la la-envelope"></i>
-              </Link>
+                <i className="fa fa-envelope"></i>
+              </a>
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <Link className="dropdown-item" to="#">
+                <a className="dropdown-item" href="#">
                   Action
-                </Link>
-                <Link className="dropdown-item" to="#">
+                </a>
+                <a className="dropdown-item" href="#">
                   Another action
-                </Link>
+                </a>
                 <div className="dropdown-divider"></div>
-                <Link className="dropdown-item" to="#">
+                <a className="dropdown-item" href="#">
                   Something else here
-                </Link>
+                </a>
               </div>
             </li>
             <li className="nav-item dropdown hidden-caret">
-              <Link
+              <a
                 className="nav-link dropdown-toggle"
-                to="#"
+                href="#"
                 id="navbarDropdown"
                 role="button"
                 data-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                <i className="la la-bell"></i>
+                <i className="fa fa-bell"></i>
                 <span className="notification">3</span>
-              </Link>
+              </a>
               <ul
                 className="dropdown-menu notif-box"
                 aria-labelledby="navbarDropdown"
@@ -93,25 +107,25 @@ const MainHeader = () => {
                 </li>
                 <li>
                   <div className="notif-center">
-                    <Link to="#">
+                    <a href="#">
                       <div className="notif-icon notif-primary">
-                        <i className="la la-user-plus"></i>
+                        <i className="fa fa-user-plus"></i>
                       </div>
                       <div className="notif-content">
                         <span className="block">New user registered</span>
                         <span className="time">5 minutes ago</span>
                       </div>
-                    </Link>
-                    <Link to="#">
+                    </a>
+                    <a href="#">
                       <div className="notif-icon notif-success">
-                        <i className="la la-comment"></i>
+                        <i className="fa fa-comment"></i>
                       </div>
                       <div className="notif-content">
                         <span className="block">Rahmad commented on Admin</span>
                         <span className="time">12 minutes ago</span>
                       </div>
-                    </Link>
-                    <Link to="#">
+                    </a>
+                    <a href="#">
                       <div className="notif-img">
                         <img src="assets/img/profile2.jpg" alt="Img Profile" />
                       </div>
@@ -119,31 +133,36 @@ const MainHeader = () => {
                         <span className="block">Reza sent messages to you</span>
                         <span className="time">12 minutes ago</span>
                       </div>
-                    </Link>
-                    <Link to="#">
+                    </a>
+                    <a href="#">
                       <div className="notif-icon notif-danger">
-                        <i className="la la-heart"></i>
+                        <i className="fa fa-heart"></i>
                       </div>
                       <div className="notif-content">
                         <span className="block">Farrah liked Admin</span>
                         <span className="time">17 minutes ago</span>
                       </div>
-                    </Link>
+                    </a>
                   </div>
                 </li>
                 <li>
-                  <Link className="see-all" to="#">
+                  <a className="see-all" href="javascript:void(0);">
                     <strong>See all notifications</strong>{" "}
-                    <i className="la la-angle-right"></i>
-                  </Link>
+                    <i className="fa fa-angle-right"></i>
+                  </a>
                 </li>
               </ul>
             </li>
-            <li className="nav-item dropdown">
-              <Link
+            <li>
+              <button onClick={handleLogout} className="btn btn-primary">
+                Logout
+              </button>
+            </li>
+            {/* <li className="nav-item dropdown">
+              <a
                 className="dropdown-toggle profile-pic"
                 data-toggle="dropdown"
-                to="#"
+                href="#"
                 aria-expanded="false"
               >
                 <img
@@ -153,7 +172,7 @@ const MainHeader = () => {
                   className="img-circle"
                 />
                 <span>Hizrian</span>
-              </Link>
+              </a>
               <ul className="dropdown-menu dropdown-user">
                 <li>
                   <div className="user-box">
@@ -173,25 +192,25 @@ const MainHeader = () => {
                   </div>
                 </li>
                 <div className="dropdown-divider"></div>
-                <Link className="dropdown-item" to="#">
+                <a className="dropdown-item" href="#">
                   <i className="ti-user"></i> My Profile
-                </Link>
-                <Link className="dropdown-item" to="#">
+                </a>
+                <a className="dropdown-item" href="#">
                   My Balance
-                </Link>
-                <Link className="dropdown-item" to="#">
+                </a>
+                <a className="dropdown-item" href="#">
                   <i className="ti-email"></i> Inbox
-                </Link>
+                </a>
                 <div className="dropdown-divider"></div>
-                <Link className="dropdown-item" to="#">
+                <a className="dropdown-item" href="#">
                   <i className="ti-settings"></i> Account Setting
-                </Link>
+                </a>
                 <div className="dropdown-divider"></div>
-                <Link className="dropdown-item" to="#">
+                <a className="dropdown-item" href="#">
                   <i className="fa fa-power-off"></i> Logout
-                </Link>
+                </a>
               </ul>
-            </li>
+            </li> */}
           </ul>
         </div>
       </nav>

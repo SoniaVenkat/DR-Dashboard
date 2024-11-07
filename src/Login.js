@@ -40,7 +40,6 @@ const Login = () => {
     instance
       .loginPopup({ scopes: ["User.Read"] })
       .then(() => {
-        sessionStorage.setItem('isAuthenticated', 'true');
         navigate("/dashboard");
       })
       .catch((error) => {

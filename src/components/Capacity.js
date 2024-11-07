@@ -1,16 +1,14 @@
 import React from "react";
 import MainHeader from "./MainHeader";
 import Sidebar from "./Sidebar";
-import { Link } from "react-router-dom";
-
 const Capacity = () => {
   return (
     <div className="header">
       <MainHeader></MainHeader>
       <Sidebar></Sidebar>
-      <div className="container">
+      <div className="container ms-left p-5 mt-5">
         <div className="d-flex justify-content-between align-items-center mb-4">
-          <h4>Resource type details</h4>
+          <h4 className="page-title mb-0">Resource type details</h4>
           <p className="mb-0">Region : US East (N.Virginia)</p>
         </div>
 
@@ -27,10 +25,10 @@ const Capacity = () => {
         </div>
 
         <div className="d-flex justify-content-between align-items-center mb-4 mt-4">
-          <h4>Recommendation</h4>
-          <Link className="btn btn-primary" to="#">
+          <h4 className="page-title">Recommendation</h4>
+          <a className="btn btn-primary" href="#">
             Submit Support Request
-          </Link>
+          </a>
         </div>
 
         <div className="card">

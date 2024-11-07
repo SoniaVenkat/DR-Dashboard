@@ -74,7 +74,8 @@ button.close {
 
 body {
   font-size: 14px;
-  color: #575962;
+  color: #121212;
+  background-color: #f2f3f8;
 }
 
 h1,
@@ -2247,7 +2248,6 @@ label {
 
 /*    Layouts     */
 body {
-  min-height: 100vh;
   position: relative;
 }
 
@@ -2263,6 +2263,7 @@ body {
   width: 100%;
   background: #ffffff;
   position: fixed;
+  top: -2px;
   z-index: 1001;
   border-bottom: 1px solid #eee;
 }
@@ -2466,9 +2467,7 @@ body {
 
 .main-panel {
   position: relative;
-  width: calc(100% - 260px);
-  min-height: 100%;
-  float: right;
+
   background: #f2f3f8;
 }
 .main-panel .content {
@@ -6289,12 +6288,6 @@ body {
   font-size: 12px;
 }
 
-
-
-
-
-
-
 /*     Alert    */
 .alert {
   border: 0px;
@@ -6806,10 +6799,6 @@ body {
   border: 0 !important;
 }
 
-
-
-
-
 /*     Responsive     */
 @media screen and (max-width: 700px) {
   .row-card-no-pd [class*="col-"] .card:after {
@@ -6958,4 +6947,9 @@ body {
   }
 }
 
-
+.ms-left {
+  margin-left: 280px;
+}
+a {
+  text-decoration: none;
+}

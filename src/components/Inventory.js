@@ -147,8 +147,8 @@ const Inventory = () => {
     <div>
       <MainHeader></MainHeader>
       <Sidebar></Sidebar>
-      <div className="container">
-        <h3 className="mb-4">Resource Groups</h3>
+      <div className="container ms-left p-5 mt-5">
+        <h4 className="page-title">Resource Groups</h4>
         <div className="accordion" id="resourceAccordion">
           {Object.entries(data).map(([group, resources], groupIndex) => (
             <div className="accordion-item" key={groupIndex}>
